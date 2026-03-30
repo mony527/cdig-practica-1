@@ -8,7 +8,7 @@ public class ControladorCuentaUI : MonoBehaviour
     public GameObject panelPagarEfectivo;
     public GameObject panelPagarTarjeta;
     public Button botonEfectivo;
-    public Button botonTarjeta; 
+    public Button botonTarjeta;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +29,15 @@ public class ControladorCuentaUI : MonoBehaviour
         panelPagarTarjeta.SetActive(true);
         botonEfectivo.interactable = false;
         botonTarjeta.interactable = false;
+    }
+
+    public void CancelarPago()
+    {
+        panelPagarEfectivo.SetActive(false);
+        panelPagarTarjeta.SetActive(false);
+        botonEfectivo.interactable = true;
+        botonTarjeta.interactable = true;
+
     }
 
     // Update is called once per frame
