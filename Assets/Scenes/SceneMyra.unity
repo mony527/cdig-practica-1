@@ -448,15 +448,15 @@ PrefabInstance:
     - target: {fileID: 1390959658622580851, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 74b2c7bc556ead849bbda45e7c4ad854, type: 3}
+      objectReference: {fileID: 21300000, guid: da53dbbcdc647a34f9e39985554d8dde, type: 3}
     - target: {fileID: 1866846474845106534, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d778b07fbe3fcad4f9e0c020641af16e, type: 3}
+      objectReference: {fileID: 21300000, guid: 0d017ddedaa043f43aba55c4044e68ff, type: 3}
     - target: {fileID: 2120476119066702828, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fc338faf5e0fd6c4092087f95d0a45df, type: 3}
+      objectReference: {fileID: 21300000, guid: f0758ba8b428f5c45b55115e7b727019, type: 3}
     - target: {fileID: 2204928373192550376, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Name
       value: PanelPostres
@@ -468,7 +468,7 @@ PrefabInstance:
     - target: {fileID: 2313418057763620758, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 45016f848a13e864b9a77779dec0872d, type: 3}
+      objectReference: {fileID: 21300000, guid: 816e3a37be63f2b4c8604d6b5ba4e946, type: 3}
     - target: {fileID: 2866397489199792864, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -552,7 +552,7 @@ PrefabInstance:
     - target: {fileID: 5610565694280163335, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 027f9de525b0ca745bfcf2b8df338882, type: 3}
+      objectReference: {fileID: 21300000, guid: cb4a3c291d051294c805baad94af41e0, type: 3}
     - target: {fileID: 5688350946347102415, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Text
       value: Milhojas con chocolate negro y avellanas
@@ -588,7 +588,7 @@ PrefabInstance:
     - target: {fileID: 8377450253772608014, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 34c7c87662e0f134494525b6474d3fa7, type: 3}
+      objectReference: {fileID: 21300000, guid: 4d01deed5383fbe4db8dfb95fbb0c72b, type: 3}
     - target: {fileID: 8471156237062367213, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 54
@@ -1596,7 +1596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &610398758
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1994,11 +1994,11 @@ PrefabInstance:
     - target: {fileID: 4852723555981743684, guid: 7d899285cd37e1e46af7789bd1c3ef2b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6cb82e37010ee5e4ebda850fb22b5865, type: 3}
+      objectReference: {fileID: 21300000, guid: 139d507cfc7f82746a65786ef3ee17e7, type: 3}
     - target: {fileID: 5187844035328457464, guid: 7d899285cd37e1e46af7789bd1c3ef2b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 14f471e3f2c8acd44941303bc33818a0, type: 3}
+      objectReference: {fileID: 21300000, guid: 260fd14e64954084db296a2c9f233a11, type: 3}
     - target: {fileID: 5235985488741519848, guid: 7d899285cd37e1e46af7789bd1c3ef2b, type: 3}
       propertyPath: m_Text
       value: Capuchino
@@ -2006,7 +2006,7 @@ PrefabInstance:
     - target: {fileID: 5660001008780149212, guid: 7d899285cd37e1e46af7789bd1c3ef2b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fda1edee379f5c54297232540567aed6, type: 3}
+      objectReference: {fileID: 21300000, guid: 13aaaae8f1e94af4e8862d8b5f639771, type: 3}
     - target: {fileID: 6025634064726596848, guid: 7d899285cd37e1e46af7789bd1c3ef2b, type: 3}
       propertyPath: m_Text
       value: 'Americano '
@@ -2034,7 +2034,7 @@ PrefabInstance:
     - target: {fileID: 7507924845726884521, guid: 7d899285cd37e1e46af7789bd1c3ef2b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6c80fa3ed92a26d41afc7e846bd326fb, type: 3}
+      objectReference: {fileID: 21300000, guid: fa30a315a90b4924183a20e5326c89a7, type: 3}
     - target: {fileID: 8486290704233378535, guid: 7d899285cd37e1e46af7789bd1c3ef2b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 11
@@ -2693,7 +2693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1471434855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3361,12 +3361,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2204928373192550376, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2313418057763620758, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d1996c4b81ca36641814bfaa2ff8c81a, type: 3}
+      objectReference: {fileID: 21300000, guid: 32b9a7e9a88a8df48b1339788c3e63b3, type: 3}
     - target: {fileID: 2866397489199792864, guid: 438325bf42a4b1e42be87fea4a4a13f2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4067,6 +4067,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6695200396413506531, guid: 35b40479c8281c048a44e0c942e4c6a8, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781515444375324888, guid: 35b40479c8281c048a44e0c942e4c6a8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781515444375324888, guid: 35b40479c8281c048a44e0c942e4c6a8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781515444375324888, guid: 35b40479c8281c048a44e0c942e4c6a8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781515444375324888, guid: 35b40479c8281c048a44e0c942e4c6a8, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
