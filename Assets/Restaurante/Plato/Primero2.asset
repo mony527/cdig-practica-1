@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f14a9e5f3f8c834f9072c65767099ba, type: 3}
+  m_Name: Primero2
+  m_EditorClassIdentifier: 
+  nombre: "Torticas de verduras con salsa t\xE1rtara"
+  tipo: 0
+  ingredientes: "\t\u2022\tCalabac\xEDn\r\n\t\u2022\tZanahoria\r\n\t\u2022\tCebolla\r\n\t\u2022\tPatata\r\n\t\u2022\tHuevo\r\n\t\u2022\tHarina\r\n\t\u2022\tPerejil\r\n\t\u2022\tAceite\r\n\t\u2022\tPara
+    la salsa t\xE1rtara: mayonesa, alcaparras, pepinillos, cebolla, lim\xF3n"
+  precio: 10
+  imagenPlato: {fileID: 21300000, guid: 2279e620d2e168f4cae0b495ec78e789, type: 3}
