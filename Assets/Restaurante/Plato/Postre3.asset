@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f14a9e5f3f8c834f9072c65767099ba, type: 3}
+  m_Name: Postre3
+  m_EditorClassIdentifier: 
+  nombre: Sorbete de cereza con remolacha fermentada y crumble salado
+  tipo: 2
+  ingredientes: "  \u2022    Cerezas\r\n    \u2022    Az\xFAcar\r\n    \u2022   
+    Agua\r\n    \u2022    Zumo de lim\xF3n\r\n    \u2022    Remolacha fermentada\r\n   
+    \u2022    Para el crumble: harina, mantequilla, sal, az\xFAcar o parmesano"
+  precio: 4
+  imagenPlato: {fileID: 21300000, guid: f0758ba8b428f5c45b55115e7b727019, type: 3}
