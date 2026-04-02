@@ -18,16 +18,14 @@ public class CargarPlato : MonoBehaviour
         this.plato = plato;
         this.controladorMenu = controladorMenu;
 
-        // "Pintamos" la información en el botón
+        // "Pintamos" la informaciÃ³n en el botÃ³n
         if (textoNombre != null) textoNombre.text = plato.nombre;
-        if (textoPrecio != null) textoPrecio.text = plato.precio.ToString("F2") + "€";
+        if (textoPrecio != null) textoPrecio.text = plato.precio.ToString("F2") + "â‚¬";
         if (imagenPlato != null) imagenPlato.sprite = plato.imagenPlato;
 
-        // 3. Opcional: Si el botón tiene un componente Button, añadimos el clic
-        GetComponent<Button>().onClick.AddListener(AlPulsarBotón);
-    }
+       }
 
-    void AlPulsarBotón()
+    void AlPulsarBoton()
     {
         // Avisamos al controlador de que este plato ha sido seleccionado
         controladorMenu.SeleccionarPlato(this.plato);

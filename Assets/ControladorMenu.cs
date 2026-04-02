@@ -50,11 +50,11 @@ public class ControladorMenu : MonoBehaviour
         // 2. Crear los platos
         foreach (Plato plato in listaAMostrar)
         {
-            GameObject nuevoItem = Instantiate(prefabItemMenu, contenedor);
+            GameObject nuevoItem = Instantiate(prefabItemMenu, contenedor.transform);
 
             // Suponiendo que tu prefab tiene un script 'ItemMenuUI' para ponerse sus datos
             CargarPlato ui = nuevoItem.GetComponent<CargarPlato>();
-            Debug.Log($"Contenedor: {contenedor}, Prefab: {prefabItemMenu}, Lista: {listaAMostrar}");
+            Debug.Log($"Contenedor: {contenedor}, Prefab: {prefabItemMenu}, Nombre: {ui.textoNombre.text}, Precio: {ui.textoPrecio.text}");
 
             ui.RellenarInfoPlato(plato, this);
         }
