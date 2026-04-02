@@ -10,7 +10,7 @@ public enum TipoPlato
     Segundo,
     Postre,
     Bebida,
-    Cafe
+    Café
 }
 
 [CreateAssetMenu(fileName = "NuevoPlato", menuName = "Restaurante/Plato")]

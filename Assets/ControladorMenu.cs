@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq; // Para filtrar fácilmente
+using TMPro;
 
 
 public class ControladorMenu : MonoBehaviour
@@ -9,11 +10,14 @@ public class ControladorMenu : MonoBehaviour
     public GameObject panelMenu;
     public GameObject panelElegirPlatoComensal;
     public GameObject panelInfoPlato;
+
     private ControladorInfoPlato controladorInfoPlato;
 
     public List<Plato>todosLosPlatos; // Arrastra aquí todos tus archivos .asset
     public GameObject prefabItemMenu; // Tu prefab 'ButtonPlano'
     public Transform contenedor; // El objeto con el 'Grid Layout Group'
+
+    public TMP_Dropdown opcionFiltro;
 
     //public ControladorDetalle scriptDetalle; // Referencia al panel de información extendida
 
@@ -34,14 +38,23 @@ public class ControladorMenu : MonoBehaviour
     public void MostrarTodos() => CargarMenu(todosLosPlatos);
 
     // Botones de FILTRO (Primeros, Segundos, etc.)
-    public void FiltrarPorCategoria(string categoriaString)
+    public void FiltrarPorCategoria()
     {
-        // Convertimos el texto del botón a el Enum TipoPlato
-        TipoPlato cat = (TipoPlato)System.Enum.Parse(typeof(TipoPlato), categoriaString);
 
-        // Filtramos la lista usando LINQ
-        var filtrados = todosLosPlatos.Where(p => p.tipo == cat).ToList();
-        CargarMenu(filtrados);
+        string categoriaString = opcionFiltro.options[opcionFiltro.value].text;
+
+        if (categoriaString.Equals("Seleccione un filtro de platos"))
+        {
+            CargarMenu(todosLosPlatos);
+        }
+        else
+        {
+            categoriaString = categoriaString.Substring(0, categoriaString.Length - 1);
+            TipoPlato cat = (TipoPlato)System.Enum.Parse(typeof(TipoPlato), categoriaString);
+            var filtrados = todosLosPlatos.Where(p => p.tipo == cat).ToList();
+            CargarMenu(filtrados);
+
+        }
     }
 
     void CargarMenu(List<Plato> listaAMostrar)

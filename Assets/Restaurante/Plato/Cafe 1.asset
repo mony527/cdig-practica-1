@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f14a9e5f3f8c834f9072c65767099ba, type: 3}
+  m_Name: Cafe 1
+  m_EditorClassIdentifier: 
+  nombre: Americano
+  tipo: 4
+  ingredientes: "\u2022 Caf\xE9 100% Ar\xE1bica"
+  precio: 3.5
+  imagenPlato: {fileID: 21300000, guid: 139d507cfc7f82746a65786ef3ee17e7, type: 3}

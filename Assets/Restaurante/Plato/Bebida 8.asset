@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f14a9e5f3f8c834f9072c65767099ba, type: 3}
+  m_Name: Bebida 8
+  m_EditorClassIdentifier: 
+  nombre: Vino Blanco
+  tipo: 3
+  ingredientes: "\u2022 Terras Gauda (Bod. Terras Gauda) 2024"
+  precio: 9
+  imagenPlato: {fileID: 21300000, guid: 4f974e45c872dd84aa4c4e5ec32a7aa0, type: 3}
