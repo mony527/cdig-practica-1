@@ -3,43 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static ControladorPedidos;
 
 public class PanelBienvenidaScript : MonoBehaviour
 {
     public GameObject panelBienvenida;
     public GameObject panelMenu;
     public TextMeshProUGUI textNumComensales;
-    public int numComensales = 1;
+    private int numComensales;
     public Button btnAniadir;
     public Button btnQuitar;
+    public TextMeshProUGUI textAviso;
 
     // Start is called before the first frame update
     void Start()
     {
         panelBienvenida.SetActive(true);
+        textAviso.enabled = false;
+        numComensales = 1;
     }
 
     public void IrAmenu()
     {
         panelBienvenida.SetActive(false);
         panelMenu.SetActive(true);
-        //Pasar numComensales al Controlador de Pedidos
+        ControladorPedidos.instancia.GuardarComensales(numComensales);
     }
 
     public void AniadirComensal()
     {
         if (numComensales < 4)
         {
+            textAviso.enabled = false;
             btnAniadir.interactable = true;
             btnQuitar.interactable = true;
             numComensales++;
             textNumComensales.text = "" + numComensales;
-            if(numComensales == 4) btnAniadir.interactable = false;
+            if (numComensales == 4)
+            {
+                btnAniadir.interactable = false;
+                textAviso.enabled = true;
+            }
 
         }
         else
         {
             btnAniadir.interactable = false;
+            textAviso.enabled = true;
         }
 
     }
@@ -48,15 +58,20 @@ public class PanelBienvenidaScript : MonoBehaviour
     {
         if (numComensales > 1)
         {
+            textAviso.enabled = false;
             btnQuitar.interactable = true;
             btnAniadir.interactable = true;
             numComensales--;
             textNumComensales.text = "" + numComensales;
-            if (numComensales == 1) btnQuitar.interactable = false;
+            if (numComensales == 1) { 
+                btnQuitar.interactable = false;
+                textAviso.enabled = true;
+            }
         }
         else
         {
             btnQuitar.interactable = false;
+            textAviso.enabled = true;
         }
     }
 
