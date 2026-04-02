@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Crema de calabaza asada con almendras
   tipo: 0
-  ingredientes: "\t\u2022\tCalabaza\r\n\t\u2022\tCebolla\r\n\t\u2022\tAjo\r\n\t\u2022\tCaldo
-    de verduras\r\n\t\u2022\tAceite de oliva\r\n\t\u2022\tNata o leche evaporada\r\n\t\u2022\tAlmendras
-    tostadas\r\n\t\u2022\tSal, pimienta, nuez moscada"
+  ingredientes: "\u2022 Calabaza\r\n\u2022 Cebolla\r\n\u2022 Ajo\r\n\u2022 Caldo
+    de verduras\r\n\u2022 Aceite de oliva\r\n\u2022 Nata o leche evaporada\r\n\u2022
+    Almendras tostadas\r\n\u2022 Sal y pimienta\n\u2022 Nuez moscada"
   precio: 10
   imagenPlato: {fileID: 21300000, guid: 32b9a7e9a88a8df48b1339788c3e63b3, type: 3}

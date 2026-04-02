@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Cachopo de ternera
   tipo: 1
-  ingredientes: "\t\u2022\tFiletes de ternera\r\n\t\u2022\tJam\xF3n serrano\r\n\t\u2022\tQueso\r\n\t\u2022\tHarina\r\n\t\u2022\tHuevo\r\n\t\u2022\tPan
-    rallado\r\n\t\u2022\tPatatas (guarnici\xF3n)"
+  ingredientes: "\u2022 Filetes de ternera\r\n\u2022 Jam\xF3n serrano\r\n\u2022 Queso\r\n\u2022
+    Harina\r\n\u2022 Huevo\r\n\u2022 Pan rallado\r\n\u2022 Patatas (guarnici\xF3n)"
   precio: 20
   imagenPlato: {fileID: 21300000, guid: b2625e208298d114a9eda1c260c72a25, type: 3}

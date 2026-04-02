@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: "Ensalada de patata, esp\xE1rragos y huevo"
   tipo: 0
-  ingredientes: "\t\u2022\tPatatas\r\n\t\u2022\tEsp\xE1rragos (verdes o blancos)\r\n\t\u2022\tHuevos\r\n\t\u2022\tCebolleta\r\n\t\u2022\tVinagreta
-    (aceite, vinagre, mostaza)\r\n\t\u2022\tSal y pimienta"
+  ingredientes: "\u2022 Patatas\r\n\u2022 Esp\xE1rragos (verdes o blancos)\r\n\u2022
+    Huevos\r\n\u2022 Cebolleta\r\n\u2022 Vinagreta (aceite, vinagre, mostaza)\r\n\u2022
+    Sal y pimienta"
   precio: 10
   imagenPlato: {fileID: 21300000, guid: 60d31d7df18d1ac4aa20b6f30bfbf78d, type: 3}

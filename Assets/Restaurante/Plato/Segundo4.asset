@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Lubina salvaje con beurre blanc y verduras baby
   tipo: 1
-  ingredientes: "\t\u2022\tLubina salvaje\r\n\t\u2022\tChalota\r\n\t\u2022\tVino
-    blanco\r\n\t\u2022\tMantequilla\r\n\t\u2022\tNata\r\n\t\u2022\tLim\xF3n\r\n\t\u2022\tVerduras
-    baby (zanahoria, calabac\xEDn, jud\xEDas, etc.)"
+  ingredientes: "\u2022 Lubina salvaje\r\n\u2022 Chalota\r\n\u2022 Vino blanco\r\n\u2022
+    Mantequilla\r\n\u2022 Nata\r\n\u2022 Lim\xF3n\r\n\u2022 Verduras baby (zanahoria,
+    calabac\xEDn, jud\xEDas, etc.)"
   precio: 20
   imagenPlato: {fileID: 21300000, guid: 4fae251f167a5424789512db6a8c744d, type: 3}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Wok de fideos chinos con setas shiitake y secreto
   tipo: 0
-  ingredientes: "\t\u2022\tFideos chinos\r\n\t\u2022\tSecreto de cerdo\r\n\t\u2022\tSetas
-    shiitake\r\n\t\u2022\tPimiento\r\n\t\u2022\tZanahoria\r\n\t\u2022\tCebolla\r\n\t\u2022\tSalsa
-    de soja\r\n\t\u2022\tAceite de s\xE9samo\r\n\t\u2022\tJengibre y ajo"
+  ingredientes: "\u2022 Fideos chinos\r\n\u2022 Secreto de cerdo\r\n\u2022 Setas
+    shiitake\r\n\u2022 Pimiento\r\n\u2022 Zanahoria\r\n\u2022 Cebolla\r\n\u2022 Salsa
+    de soja\r\n\u2022 Aceite de s\xE9samo\r\n\u2022 Jengibre \n\u2022 Ajo"
   precio: 10
   imagenPlato: {fileID: 21300000, guid: 9bd89f9d26bde6a4782fa7fd6c6e2461, type: 3}

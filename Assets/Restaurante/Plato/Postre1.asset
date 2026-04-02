@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Dame blanche
   tipo: 2
-  ingredientes: "    \u2022    Helado de vainilla\r\n    \u2022    Chocolate negro\r\n   
-    \u2022    Nata\r\n    \u2022    Az\xFAcar\r\n    \u2022    Mantequilla\r\n   
-    \u2022    Almendras o frutos secos (opcional)"
+  ingredientes: "\u2022 Helado de vainilla\r\n\u2022 Chocolate negro\r\n\u2022 Nata\r\n\u2022
+    Az\xFAcar\r\n\u2022 Mantequilla\r\n\u2022 Almendras o frutos secos (opcional)"
   precio: 4
   imagenPlato: {fileID: 21300000, guid: 816e3a37be63f2b4c8604d6b5ba4e946, type: 3}

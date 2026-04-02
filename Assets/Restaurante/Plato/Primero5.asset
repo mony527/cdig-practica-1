@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Raviolis con salsa napolitana
   tipo: 0
-  ingredientes: "\t\u2022\tRaviolis (carne, queso o espinacas)\r\n\t\u2022\tTomate
-    triturado\r\n\t\u2022\tAjo\r\n\t\u2022\tCebolla\r\n\t\u2022\tAlbahaca\r\n\t\u2022\tAceite
-    de oliva\r\n\t\u2022\tQueso parmesano"
+  ingredientes: "\u2022 Raviolis (carne, queso o espinacas)\r\n\u2022 Tomate triturado\r\n\u2022
+    Ajo\r\n\u2022 Cebolla\r\n\u2022 Albahaca\r\n\u2022 Aceite de oliva\r\n\u2022
+    Queso parmesano"
   precio: 10
   imagenPlato: {fileID: 21300000, guid: 2f61a9ad6e7152147b9225cc2b3a9dfb, type: 3}

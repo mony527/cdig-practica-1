@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Arroz meloso de rabo de toro
   tipo: 1
-  ingredientes: "\t\u2022\tArroz\r\n\t\u2022\tRabo de toro\r\n\t\u2022\tCebolla\r\n\t\u2022\tZanahoria\r\n\t\u2022\tPimiento\r\n\t\u2022\tTomate\r\n\t\u2022\tVino
-    tinto\r\n\t\u2022\tCaldo de carne\r\n\t\u2022\tAjo\r\n\t\u2022\tLaurel"
+  ingredientes: "\u2022 Arroz\r\n\u2022 Rabo de toro\r\n\u2022 Cebolla\r\n\u2022
+    Zanahoria\r\n\u2022 Pimiento\r\n\u2022 Tomate\r\n\u2022 Vino tinto\r\n\u2022
+    Caldo de carne\r\n\u2022 Ajo\r\n\u2022 Laurel"
   precio: 20
   imagenPlato: {fileID: 21300000, guid: 9ff1f41c75d74564cbe357ad2f8d25ab, type: 3}

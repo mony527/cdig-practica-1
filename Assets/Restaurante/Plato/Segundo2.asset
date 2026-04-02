@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Risotto de gambas
   tipo: 1
-  ingredientes: "\t\u2022\tArroz arborio\r\n\t\u2022\tGambas\r\n\t\u2022\tCaldo de
-    pescado\r\n\t\u2022\tCebolla\r\n\t\u2022\tVino blanco\r\n\t\u2022\tMantequilla\r\n\t\u2022\tQueso
-    parmesano\r\n\t\u2022\tAceite de oliva"
+  ingredientes: "\u2022 Arroz arborio\r\n\u2022 Gambas\r\n\u2022 Caldo de pescado\r\n\u2022
+    Cebolla\r\n\u2022 Vino blanco\r\n\u2022 Mantequilla\r\n\u2022 Queso parmesano\r\n\u2022
+    Aceite de oliva"
   precio: 20
   imagenPlato: {fileID: 21300000, guid: 589b0829d882754439d6e0fad35ed9a4, type: 3}

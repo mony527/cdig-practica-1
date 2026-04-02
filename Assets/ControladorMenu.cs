@@ -8,6 +8,8 @@ public class ControladorMenu : MonoBehaviour
 {
     public GameObject panelMenu;
     public GameObject panelElegirPlatoComensal;
+    public GameObject panelInfoPlato;
+    private ControladorInfoPlato controladorInfoPlato;
 
     public List<Plato>todosLosPlatos; // Arrastra aquí todos tus archivos .asset
     public GameObject prefabItemMenu; // Tu prefab 'ButtonPlano'
@@ -60,12 +62,11 @@ public class ControladorMenu : MonoBehaviour
         }
     }
 
-    public void SeleccionarPlato(Plato datos)
+    public void SeleccionarPlato(Plato plato)
     {
-        // Llamamos al panel de detalle para que se rellene y se muestre
-        //scriptDetalle.AbrirPanel(datos);
-        // Opcional: Desactivamos el Panel del Menú
-        // gameObject.SetActive(false);
+        panelMenu.SetActive(false);
+        panelInfoPlato.SetActive(true);
+        controladorInfoPlato.MostrarInformacion(plato);
     }
 
     // Update is called once per frame

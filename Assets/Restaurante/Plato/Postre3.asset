@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Sorbete de cereza con remolacha fermentada y crumble salado
   tipo: 2
-  ingredientes: "  \u2022    Cerezas\r\n    \u2022    Az\xFAcar\r\n    \u2022   
-    Agua\r\n    \u2022    Zumo de lim\xF3n\r\n    \u2022    Remolacha fermentada\r\n   
-    \u2022    Para el crumble: harina, mantequilla, sal, az\xFAcar o parmesano"
+  ingredientes: "\u2022 Cerezas\r\n\u2022 Az\xFAcar\r\n\u2022 Agua\r\n\u2022 Zumo
+    de lim\xF3n\r\n\u2022 Remolacha fermentada\r\n\u2022 Harina\n\u2022 Mantequilla
+    \n\u2022 Sal\n\u2022 Az\xFAcar o parmesano"
   precio: 4
   imagenPlato: {fileID: 21300000, guid: f0758ba8b428f5c45b55115e7b727019, type: 3}

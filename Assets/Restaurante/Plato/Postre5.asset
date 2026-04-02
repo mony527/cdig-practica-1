@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Milhojas con chocolate negro y avellanas
   tipo: 2
-  ingredientes: "    \u2022    Hojaldre\r\n    \u2022    Chocolate negro\r\n    \u2022   
-    Nata o crema pastelera\r\n    \u2022    Avellanas\r\n    \u2022    Az\xFAcar
-    glas\r\n    \u2022    Mantequilla"
+  ingredientes: "\u2022 Hojaldre\r\n\u2022 Chocolate negro\r\n\u2022 Nata o crema
+    pastelera\r\n\u2022 Avellanas\r\n\u2022 Az\xFAcar glas\r\n\u2022 Mantequilla"
   precio: 4
   imagenPlato: {fileID: 21300000, guid: da53dbbcdc647a34f9e39985554d8dde, type: 3}

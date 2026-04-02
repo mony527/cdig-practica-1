@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Tarta de queso vasca
   tipo: 2
-  ingredientes: "    \u2022    Queso crema\r\n    \u2022    Huevos\r\n    \u2022   
-    Az\xFAcar\r\n    \u2022    Nata\r\n    \u2022    Harina o maicena\r\n    \u2022   
-    Vainilla\r\n    \u2022    Sal"
+  ingredientes: "\u2022 Queso crema\r\n\u2022 Huevos\r\n\u2022 Az\xFAcar\r\n\u2022
+    Nata\r\n\u2022 Harina o maicena\r\n\u2022 Vainilla\r\n\u2022 Sal"
   precio: 4
   imagenPlato: {fileID: 21300000, guid: 4d01deed5383fbe4db8dfb95fbb0c72b, type: 3}

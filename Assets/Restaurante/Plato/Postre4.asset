@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: "Mousse de maracuy\xE1"
   tipo: 2
-  ingredientes: "   \u2022    Pulpa de maracuy\xE1\r\n    \u2022    Huevos\r\n   
-    \u2022    Az\xFAcar\r\n    \u2022    Gelatina\r\n    \u2022    Nata montada\r\n   
-    \u2022    Lim\xF3n"
+  ingredientes: "\u2022 Pulpa de maracuy\xE1\r\n\u2022 Huevos\r\n\u2022 Az\xFAcar\r\n\u2022
+    Gelatina\r\n\u2022 Nata montada\r\n\u2022 Lim\xF3n"
   precio: 4
   imagenPlato: {fileID: 21300000, guid: cb4a3c291d051294c805baad94af41e0, type: 3}
