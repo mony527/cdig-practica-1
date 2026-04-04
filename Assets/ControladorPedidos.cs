@@ -6,6 +6,7 @@ public class ControladorPedidos : MonoBehaviour
 {
     public static ControladorPedidos instancia;
     public int numeroComensales;
+    public List<Plato> primerosplatos;
 
     void Awake()
     {

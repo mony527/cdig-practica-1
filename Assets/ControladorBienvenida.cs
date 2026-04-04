@@ -15,6 +15,22 @@ public class PanelBienvenidaScript : MonoBehaviour
     public Button btnQuitar;
     public TextMeshProUGUI textAviso;
 
+    public static PanelBienvenidaScript instancia { get; private set; }
+
+    private void Awake()
+    {
+        // Primero configuramos el Singleton
+        if (instancia != null && instancia != this)
+        {
+            Destroy(this.gameObject);
+            return; // Salimos para que no se ejecute nada más en este objeto "duplicado"
+        }
+        instancia = this;
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public int  NumComensales => numComensales;
+
     // Start is called before the first frame update
     void Start()
     {
