@@ -8,6 +8,7 @@ public class ControladorResumen : MonoBehaviour
 {
     public GameObject contenedor;
     public GameObject prefab;
+    public GameObject panelResumenPedido;
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +19,16 @@ public class ControladorResumen : MonoBehaviour
 
     void CargarResumenPedido()
     {
-        Dictionary<int, List<Plato>> platos = ControladorPedido.instancia.pedidos;
+        Dictionary<int, List<Plato>> platos = ControladorPedidos.instancia.pedidos;
 
-        foreach (int comensal in platos[0].length)
+        for (int comensal = 0; comensal<platos[0].Count; comensal++)
         {
 
             GameObject imgPlato = Instantiate(prefab, contenedor.transform);
 
-            CargarPlato cargarPlato = nuevoItem.GetComponent<CargarPlato>();
+            //CargarPlato cargarPlato = nuevoItem.GetComponent<CargarPlato>();
 
-            cargarPlato.RellenarInfoPlato(plato, this);
+            //cargarPlato.RellenarInfoPlato(plato, this);
         }
     }
     // Update is called once per frame
