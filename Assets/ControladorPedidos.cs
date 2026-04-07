@@ -14,7 +14,7 @@ public class ControladorPedidos : MonoBehaviour
     private int numeroComensal;
     private const int NUMERO_TOTAL_PLATOS = 5;
     private int numeroPlato;
-    private Dictionary<int, List<Plato>> pedidos;
+    private Dictionary<int, List<Plato>> pedidos { get; set; }
     private string[] textoPlatos = { "el primer plato", " el segundo plato", "el postre", "la bebida", "el café" };
     private string[] platos = { "Primeros", "Segundos", "Postres", "Bebidas", "Cafés" };
 
@@ -23,6 +23,7 @@ public class ControladorPedidos : MonoBehaviour
     public TextMeshProUGUI textoComensal;
     public TextMeshProUGUI textoAviso;
     public GameObject panelElegirPlatoComensal;
+    public GameObject panelResumenPedido;
     public GameObject prefabItemMenu;
     public Transform contenedor;
 
@@ -84,7 +85,7 @@ public class ControladorPedidos : MonoBehaviour
         } else
         {
             panelElegirPlatoComensal.SetActive(false);
-            //Ir a panel de resumen de pedido
+            panelResumenPedido.setActive(true);
         }
     }
 
