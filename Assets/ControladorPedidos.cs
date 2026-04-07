@@ -15,8 +15,8 @@ public class ControladorPedidos : MonoBehaviour
     private const int NUMERO_TOTAL_PLATOS = 5;
     private int numeroPlato;
     private Dictionary<int, List<Plato>> pedidos { get; set; }
-    private string[] textoPlatos = { "el primer plato", " el segundo plato", "el postre", "la bebida", "el café" };
-    private string[] platos = { "Primeros", "Segundos", "Postres", "Bebidas", "Cafés" };
+    private string[] textoPlatos = { "el primer plato", " el segundo plato", "el postre", "la bebida", "el cafÃ©" };
+    private string[] platos = { "Primeros", "Segundos", "Postres", "Bebidas", "CafÃ©s" };
 
     public TextMeshProUGUI textoPaso;
     public TextMeshProUGUI tituloPantalla;
@@ -32,7 +32,7 @@ public class ControladorPedidos : MonoBehaviour
         if (instancia != null && instancia != this)
         {
             Destroy(this.gameObject);
-            return; // Salimos para que no se ejecute nada más en este objeto "duplicado"
+            return; // Salimos para que no se ejecute nada mÃ¡s en este objeto "duplicado"
         }
         instancia = this;
         pedidos = new Dictionary<int, List<Plato>>();
@@ -49,7 +49,7 @@ public class ControladorPedidos : MonoBehaviour
     public void GuardarComensales(int comensales)
     {
         numeroTotalComensales = comensales;
-        Debug.Log("Número de comensales guardados: " + numeroTotalComensales );
+        Debug.Log("NÃºmero de comensales guardados: " + numeroTotalComensales );
     }
     public void CargarPanel()
     {
@@ -87,6 +87,7 @@ public class ControladorPedidos : MonoBehaviour
             panelElegirPlatoComensal.SetActive(false);
             panelResumenPedido.SetActive(true);
             ControladorResumen.instancia.CargarResumenPedido(pedidos);
+            ControladorRonda.instancia.IniciarRondas(pedidos);
         }
     }
 
@@ -103,7 +104,7 @@ public class ControladorPedidos : MonoBehaviour
         if (toggleActivo != null)
         {
 
-            // Si quieres el objeto "TextNombre" que está al lado del Toggle
+            // Si quieres el objeto "TextNombre" que estÃ¡ al lado del Toggle
             string nombrePlato = toggleActivo.GetComponentInParent<CargarPlato>().textoNombre.text;
 
             Plato platoComensal = menu.encontrarPlato(nombrePlato);
