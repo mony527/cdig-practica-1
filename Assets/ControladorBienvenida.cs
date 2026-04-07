@@ -26,10 +26,10 @@ public class PanelBienvenidaScript : MonoBehaviour
             return; // Salimos para que no se ejecute nada más en este objeto "duplicado"
         }
         instancia = this;
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
-    public int  NumComensales => numComensales;
+    public int  NumComensales => numComensales; // Qué es esto??
 
     // Start is called before the first frame update
     void Start()

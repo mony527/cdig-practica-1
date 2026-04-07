@@ -22,37 +22,32 @@ public class ControladorMenu : MonoBehaviour
 
     public static ControladorMenu instancia { get; private set; }
 
-    private ControladorElegirPlatoUI controladorElegirPlatoUI;
-    //public ControladorDetalle scriptDetalle; // Referencia al panel de información extendida
-
     private void Awake()
     {
-        // Primero configuramos el Singleton
         if (instancia != null && instancia != this)
         {
             Destroy(this.gameObject);
             return; // Salimos para que no se ejecute nada más en este objeto "duplicado"
         }
         instancia = this;
-        DontDestroyOnLoad(this.gameObject);
     }
     // Start is called before the first frame update
     void Start()
     {
         panelMenu.SetActive(false);
-        MostrarTodos(); // Al empezar, enseñamos todo
+        MostrarTodos();
     }
 
     public void HacerPedido()
     {
         panelMenu.SetActive(false);
         panelElegirPlatoComensal.SetActive(true);
+        ControladorPedidos.instancia.CargarPanel();
+        ControladorPedidos.instancia.ElegirPlato();
     }
     
-    // Botón "TODOS"
     public void MostrarTodos() => CargarMenu(todosLosPlatos);
 
-    // Botones de FILTRO (Primeros, Segundos, etc.)
     public void FiltrarPorCategoria()
     {
         string categoriaString = opcionFiltro.options[opcionFiltro.value].text;
@@ -73,26 +68,21 @@ public class ControladorMenu : MonoBehaviour
 
     public void FiltrarPorCategoria(string categoria, Transform contenedor, GameObject prefabItemMenu)
     {
-        Debug.Log("Hola");
-            categoria = categoria.Substring(0, categoria.Length - 1);
-            TipoPlato cat = (TipoPlato)System.Enum.Parse(typeof(TipoPlato), categoria);
-            var filtrados = todosLosPlatos.Where(p => p.tipo == cat).ToList();
-            CargarMenu(filtrados, contenedor, prefabItemMenu);
-     }
+        categoria = categoria.Substring(0, categoria.Length - 1);
+        TipoPlato cat = (TipoPlato)System.Enum.Parse(typeof(TipoPlato), categoria);
+        var filtrados = todosLosPlatos.Where(p => p.tipo == cat).ToList();
+        CargarMenu(filtrados, contenedor, prefabItemMenu);
+    }
 
     void CargarMenu(List<Plato> listaAMostrar)
     {
-        // 1. Limpiar el contenedor
         foreach (Transform hijo in contenedor) Destroy(hijo.gameObject);
 
-        // 2. Crear los platos
         foreach (Plato plato in listaAMostrar)
         {
             GameObject nuevoItem = Instantiate(prefabItemMenu, contenedor.transform);
 
-            // Suponiendo que tu prefab tiene un script 'ItemMenuUI' para ponerse sus datos
             CargarPlato ui = nuevoItem.GetComponent<CargarPlato>();
-            Debug.Log($"Contenedor: {contenedor}, Prefab: {prefabItemMenu}, Nombre: {ui.textoNombre.text}, Precio: {ui.textoPrecio.text}");
 
             ui.RellenarInfoPlato(plato, this);
         }
@@ -101,11 +91,11 @@ public class ControladorMenu : MonoBehaviour
     void CargarMenu(List<Plato> listaAMostrar, Transform contenedor, GameObject prefabItemMenu)
     {
         Debug.Log("Cargar menu");
-        // 1. Limpiar el contenedor
+
         foreach (Transform hijo in contenedor) Destroy(hijo.gameObject);
 
         ToggleGroup contenedorGrupo = contenedor.GetComponent<ToggleGroup>();
-        // 2. Crear los platos
+
         foreach (Plato plato in listaAMostrar)
         {
             GameObject nuevoItem = Instantiate(prefabItemMenu, contenedor.transform);
@@ -116,9 +106,7 @@ public class ControladorMenu : MonoBehaviour
                 toggleDelPlato.group = contenedorGrupo;
             }
 
-            // Suponiendo que tu prefab tiene un script 'ItemMenuUI' para ponerse sus datos
             CargarPlato ui = nuevoItem.GetComponent<CargarPlato>();
-            Debug.Log($"Contenedor: {contenedor}, Prefab: {prefabItemMenu}, Nombre: {ui.textoNombre.text},");
             ui.RellenarInfoPlato(plato, this);
         }
     }
