@@ -14,7 +14,7 @@ public class ControladorPedidos : MonoBehaviour
     private int numeroComensal;
     private const int NUMERO_TOTAL_PLATOS = 5;
     private int numeroPlato;
-    public Dictionary<int, List<Plato>> pedidos { get; set; }
+    private Dictionary<int, List<Plato>> pedidos { get; set; }
     private string[] textoPlatos = { "el primer plato", " el segundo plato", "el postre", "la bebida", "el café" };
     private string[] platos = { "Primeros", "Segundos", "Postres", "Bebidas", "Cafés" };
 
@@ -86,6 +86,7 @@ public class ControladorPedidos : MonoBehaviour
         {
             panelElegirPlatoComensal.SetActive(false);
             panelResumenPedido.SetActive(true);
+            ControladorResumen.instancia.CargarResumenPedido(pedidos);
         }
     }
 
@@ -124,6 +125,7 @@ public class ControladorPedidos : MonoBehaviour
             }
             else
             {
+                pedidos[numeroPlato].Add(null);
                 numeroPlato++;
             }
         }
