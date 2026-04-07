@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ControladorRonda : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class ControladorRonda : MonoBehaviour
     public GameObject panelPago;
     public TextMeshProUGUI textoTituloRonda;
     public TextMeshProUGUI textoEstadoGeneral; //mirar estos dos si van así 
+    public Button botonTerminarRonda;
 
+    private bool rondaListaParaTerminar = false;
     private Dictionary<int, List<Plato>> pedidos;
     private List<ControladorComensalRonda> comensalesUI = new List<ControladorComensalRonda>();
     private int rondaActual = 0;
@@ -38,7 +41,9 @@ public class ControladorRonda : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("ControladorRonda arrancando"); 
+        Debug.Log("ControladorRonda arrancando");
+       
+        
     }
 
     public void IniciarRondas(Dictionary<int, List<Plato>> pedidosRecibidos) //cambiar el nombre de pedidosRecibidos
@@ -68,6 +73,13 @@ public class ControladorRonda : MonoBehaviour
 
         CrearComensales(numeroComensales);
         CargarPlatosDeLaRonda(rondaActual);
+
+        rondaListaParaTerminar = false;
+
+        if (botonTerminarRonda != null)
+        {
+            botonTerminarRonda.interactable = false;
+        }
 
         StopAllCoroutines();
         StartCoroutine(SimularEstadoGeneral());
@@ -134,10 +146,23 @@ public class ControladorRonda : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         textoEstadoGeneral.text = "Estado: entregado";
+
+        rondaListaParaTerminar = true;
+
+        if (botonTerminarRonda != null)
+        {
+            botonTerminarRonda.interactable = true;
+        }
     }
 
     public void TerminarRonda()
     {
+        if (!rondaListaParaTerminar)
+        {
+            Debug.Log("La ronda todavía no está entregada.");
+            return;
+        }
+
         rondaActual++;
 
         if (rondaActual < nombresRonda.Length)
