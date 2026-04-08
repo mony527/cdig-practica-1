@@ -12,7 +12,7 @@ public class ControladorRonda : MonoBehaviour
     public GameObject panelRonda;
     public GameObject panelPago;
     public TextMeshProUGUI textoTituloRonda;
-    public TextMeshProUGUI textoEstadoGeneral; //mirar estos dos si van así 
+    public TextMeshProUGUI textoEstado;
     public Button botonTerminarRonda;
 
     private bool rondaListaParaTerminar = false;
@@ -24,8 +24,15 @@ public class ControladorRonda : MonoBehaviour
         "PRIMEROS",
         "SEGUNDOS",
         "POSTRES",
-        "BEBIDAS",
+        /*"BEBIDAS",*/
         "CAFÉ"
+    };
+
+    private readonly int[] categoriasRonda = {
+        0, // PRIMEROS
+        1, // SEGUNDOS
+        2, // POSTRES
+        4  // CAFÉ
     };
 
     private void Awake()
@@ -42,8 +49,8 @@ public class ControladorRonda : MonoBehaviour
     void Start()
     {
         Debug.Log("ControladorRonda arrancando");
-       
-        
+
+
     }
 
     public void IniciarRondas(Dictionary<int, List<Plato>> pedidosRecibidos) //cambiar el nombre de pedidosRecibidos
@@ -71,8 +78,10 @@ public class ControladorRonda : MonoBehaviour
 
         textoTituloRonda.text = nombresRonda[rondaActual];
 
+        int categoriaReal = categoriasRonda[rondaActual];
+
         CrearComensales(numeroComensales);
-        CargarPlatosDeLaRonda(rondaActual);
+        CargarPlatosDeLaRonda(categoriaReal);
 
         rondaListaParaTerminar = false;
 
@@ -105,7 +114,7 @@ public class ControladorRonda : MonoBehaviour
             }
             else
             {
-                Debug.LogError("El prefab no tiene UIComensalRonda.");
+                Debug.LogError("El prefab no tiene ComensalRondaUI.");
             }
         }
     }
@@ -131,21 +140,21 @@ public class ControladorRonda : MonoBehaviour
             comensalesUI[i].Configurar(i + 1, plato);
         }
 
-        textoEstadoGeneral.text = "Estado: pendiente";
+        textoEstado.text = "Estado: pendiente";
     }
 
     private IEnumerator SimularEstadoGeneral()
     {
-        textoEstadoGeneral.text = "Estado: pendiente";
-        yield return new WaitForSeconds(2f);
+        textoEstado.text = "Estado: pendiente";
+        yield return new WaitForSeconds(1f);
 
-        textoEstadoGeneral.text = "Estado: en preparación";
-        yield return new WaitForSeconds(4f);
+        textoEstado.text = "Estado: en preparación";
+        yield return new WaitForSeconds(1f);
 
-        textoEstadoGeneral.text = "Estado: listo para servir";
-        yield return new WaitForSeconds(2f);
+        textoEstado.text = "Estado: listo para servir";
+        yield return new WaitForSeconds(1f);
 
-        textoEstadoGeneral.text = "Estado: entregado";
+        textoEstado.text = "Estado: entregado";
 
         rondaListaParaTerminar = true;
 
@@ -191,6 +200,6 @@ public class ControladorRonda : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
