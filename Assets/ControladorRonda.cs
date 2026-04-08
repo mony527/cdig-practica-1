@@ -189,7 +189,11 @@ public class ControladorRonda : MonoBehaviour
         panelRonda.SetActive(false);
 
         if (panelPago != null)
+        {
             panelPago.SetActive(true);
+            ControladorCuentaUI.instancia.CargarTotales(pedidos);
+
+        }
         else
             Debug.Log("Se han terminado todas las rondas.");
     }

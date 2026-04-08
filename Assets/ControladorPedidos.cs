@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using static Plato;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class ControladorPedidos : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class ControladorPedidos : MonoBehaviour
     public GameObject panelResumenPedido;
     public GameObject prefabItemMenu;
     public Transform contenedor;
+    public Button botonsiguiente;
 
     private void Awake()
     {
@@ -39,12 +41,12 @@ public class ControladorPedidos : MonoBehaviour
         for (int i = 0; i < NUMERO_TOTAL_PLATOS; i++) pedidos[i] = new List<Plato>();
     }
 
+
     void Start()
     {
         panelElegirPlatoComensal.SetActive(false);
         textoAviso.enabled = false;
     }
-
 
     public void GuardarComensales(int comensales)
     {
@@ -78,9 +80,12 @@ public class ControladorPedidos : MonoBehaviour
                 textoComensal.text = "Comensal " + numeroComensal + " de " + numeroTotalComensales;
                 menu.FiltrarPorCategoria(platos[numeroPlato], contenedor, prefabItemMenu);
                 Debug.Log("Antes de guardar numPlato:" + numeroPlato + "numeroComensal:" + numeroComensal);
+                if (numeroPlato >= 0 && numeroPlato < 3)
+                {
+                    botonsiguiente.interactable = false;
 
+                }
             }
-           
 
         } else
         {
@@ -88,6 +93,28 @@ public class ControladorPedidos : MonoBehaviour
             panelResumenPedido.SetActive(true);
             ControladorResumen.instancia.CargarResumenPedido(pedidos);
             ControladorRonda.instancia.IniciarRondas(pedidos);
+        }
+    }
+
+    public void ActivarBotonSiguiente()
+    {
+
+        if (numeroPlato >= 0 && numeroPlato <= 2)
+        {
+            ToggleGroup contenedorGrupo = contenedor.GetComponent<ToggleGroup>();
+            bool haySeleccionado = contenedorGrupo.AnyTogglesOn();
+
+            botonsiguiente.interactable = haySeleccionado;
+
+            /*do
+            {
+                botonsiguiente.interactable = false;
+                toggleActivo = contenedorGrupo.GetFirstActiveToggle();
+            }
+            while (toggleActivo == null);
+
+            botonsiguiente.interactable = true;*/
+
         }
     }
 

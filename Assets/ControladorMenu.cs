@@ -71,7 +71,13 @@ public class ControladorMenu : MonoBehaviour
         categoria = categoria.Substring(0, categoria.Length - 1);
         TipoPlato cat = (TipoPlato)System.Enum.Parse(typeof(TipoPlato), categoria);
         var filtrados = todosLosPlatos.Where(p => p.tipo == cat).ToList();
-        CargarMenu(filtrados, contenedor, prefabItemMenu);
+        bool opcional = false;
+        if(categoria == "Bebida" || categoria == "Café")
+        {
+           opcional = true;
+        }
+        CargarMenu(filtrados, contenedor, prefabItemMenu, opcional);
+
     }
 
     void CargarMenu(List<Plato> listaAMostrar)
@@ -88,7 +94,7 @@ public class ControladorMenu : MonoBehaviour
         }
     }
 
-    void CargarMenu(List<Plato> listaAMostrar, Transform contenedor, GameObject prefabItemMenu)
+    void CargarMenu(List<Plato> listaAMostrar, Transform contenedor, GameObject prefabItemMenu, bool opcional)
     {
         Debug.Log("Cargar menu");
 
@@ -104,6 +110,11 @@ public class ControladorMenu : MonoBehaviour
             if (toggleDelPlato != null && contenedorGrupo != null)
             {
                 toggleDelPlato.group = contenedorGrupo;
+                if (!opcional)
+                {
+                    LogicaBotonSiguiente logica = contenedor.GetComponent<LogicaBotonSiguiente>();
+                    toggleDelPlato.onValueChanged.AddListener(delegate { logica.ValidarBoton(); });
+                }
             }
 
             CargarPlato ui = nuevoItem.GetComponent<CargarPlato>();
