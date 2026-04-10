@@ -11,31 +11,25 @@ public class PanelBienvenidaScript : MonoBehaviour
     public GameObject panelMenu;
     public TextMeshProUGUI textNumComensales;
     private int numComensales;
-    public Button btnAniadir;
-    public Button btnQuitar;
-    public TextMeshProUGUI textAviso;
+    public Slider sliderComensales;
 
     public static PanelBienvenidaScript instancia { get; private set; }
 
     private void Awake()
     {
-        // Primero configuramos el Singleton
         if (instancia != null && instancia != this)
         {
             Destroy(this.gameObject);
-            return; // Salimos para que no se ejecute nada más en este objeto "duplicado"
+            return;
         }
         instancia = this;
-        //DontDestroyOnLoad(this.gameObject);
     }
 
-    public int  NumComensales => numComensales; // Qué es esto??
+    //public int NumComensales => numComensales; // Qué es esto??
 
-    // Start is called before the first frame update
     void Start()
     {
         panelBienvenida.SetActive(true);
-        textAviso.enabled = false;
         numComensales = 1;
     }
 
@@ -46,54 +40,10 @@ public class PanelBienvenidaScript : MonoBehaviour
         ControladorPedidos.instancia.GuardarComensales(numComensales);
     }
 
-    public void AniadirComensal()
+    public void ElegirComensales()
     {
-        if (numComensales < 4)
-        {
-            textAviso.enabled = false;
-            btnAniadir.interactable = true;
-            btnQuitar.interactable = true;
-            numComensales++;
-            textNumComensales.text = "" + numComensales;
-            if (numComensales == 4)
-            {
-                btnAniadir.interactable = false;
-                textAviso.enabled = true;
-            }
-
-        }
-        else
-        {
-            btnAniadir.interactable = false;
-            textAviso.enabled = true;
-        }
-
+        numComensales = (int)sliderComensales.value;
+        textNumComensales.text = "" + numComensales;
     }
 
-    public void QuitarComensal()
-    {
-        if (numComensales > 1)
-        {
-            textAviso.enabled = false;
-            btnQuitar.interactable = true;
-            btnAniadir.interactable = true;
-            numComensales--;
-            textNumComensales.text = "" + numComensales;
-            if (numComensales == 1) { 
-                btnQuitar.interactable = false;
-                textAviso.enabled = true;
-            }
-        }
-        else
-        {
-            btnQuitar.interactable = false;
-            textAviso.enabled = true;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

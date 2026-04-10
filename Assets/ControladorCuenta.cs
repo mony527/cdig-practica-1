@@ -16,7 +16,7 @@ public class ControladorCuentaUI : MonoBehaviour
     public Button botonEfectivo;
     public Button botonTarjeta;
 
-    List<TextMeshProUGUI> totales;
+    private List<TextMeshProUGUI> totales;
 
     public TextMeshProUGUI totalPrimeros;
     public TextMeshProUGUI totalSegundos;
@@ -29,7 +29,6 @@ public class ControladorCuentaUI : MonoBehaviour
     public TextMeshProUGUI totalPanelTarjeta;
 
     private float total;
-
     public float tiempoTotal = 5f;
     private float tiempoTranscurrido = 0f;
     private bool estaCargando = false;
@@ -46,6 +45,7 @@ public class ControladorCuentaUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panelCuenta.SetActive(false);
         panelPagarEfectivo.SetActive(false);
         panelPagarTarjeta.SetActive(false);
         totales = new List<TextMeshProUGUI>();
@@ -141,7 +141,9 @@ public class ControladorCuentaUI : MonoBehaviour
                 panelBienvenida.SetActive(true);
                 panelPagarEfectivo.SetActive(false);
                 panelPagarTarjeta.SetActive(false);
-                
+                botonEfectivo.interactable = true;
+                botonTarjeta.interactable = true;
+                ControladorPedidos.instancia.Reiniciar();
             }
         }
     }

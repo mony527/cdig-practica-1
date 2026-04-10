@@ -12,6 +12,7 @@ public class ControladorResumen : MonoBehaviour
     public GameObject prefab;
     public GameObject panelResumenPedido;
     public GameObject panelRonda;
+    private Dictionary<int, List<Plato>> pedidos;
 
 
     private void Awake()
@@ -34,6 +35,7 @@ public class ControladorResumen : MonoBehaviour
 
     public void CargarResumenPedido(Dictionary<int, List<Plato>> pedidos)
     {
+        this.pedidos = pedidos;
         // Limpiamos el contenedor por si acaso para no duplicar datos
         foreach (Transform child in contenedor.transform)
         {
@@ -120,15 +122,10 @@ public class ControladorResumen : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PedirPedidos()
     {
         panelResumenPedido.SetActive(false);
         panelRonda.SetActive(true);
+        ControladorRonda.instancia.IniciarRondas(pedidos);
     }
 }

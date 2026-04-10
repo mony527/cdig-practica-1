@@ -70,7 +70,29 @@ public class ControladorRonda : MonoBehaviour
 
     private void MostrarRondaActual()
     {
-        if (rondaActual >= nombresRonda.Length)
+        List<Plato> platosRonda = null;
+        
+        int categoriaReal = categoriasRonda[rondaActual];
+
+        if (pedidos.ContainsKey(categoriaReal))
+        {
+            platosRonda = pedidos[categoriaReal];
+        }
+        
+        int i = 0;
+        bool todosVacios = true;
+
+        Debug.Log("Ronda: " + rondaActual);
+        while (i < platosRonda.Count && todosVacios){
+            Debug.Log("hola");
+            if (platosRonda[i] != null)
+            {
+                todosVacios = false;
+            }
+            i++;
+        }
+  
+        if (rondaActual >= nombresRonda.Length || todosVacios)
         {
             IrAPantallaFinal();
             return;
@@ -78,10 +100,10 @@ public class ControladorRonda : MonoBehaviour
 
         textoTituloRonda.text = nombresRonda[rondaActual];
 
-        int categoriaReal = categoriasRonda[rondaActual];
-
         CrearComensales(numeroComensales);
-        CargarPlatosDeLaRonda(categoriaReal);
+        CargarPlatosDeLaRonda(platosRonda);
+
+        
 
         rondaListaParaTerminar = false;
 
@@ -119,14 +141,10 @@ public class ControladorRonda : MonoBehaviour
         }
     }
 
-    private void CargarPlatosDeLaRonda(int categoria)
+    private void CargarPlatosDeLaRonda(List<Plato> platosRonda)
     {
-        List<Plato> platosRonda = null;
 
-        if (pedidos.ContainsKey(categoria))
-        {
-            platosRonda = pedidos[categoria];
-        }
+        
 
         for (int i = 0; i < comensalesUI.Count; i++)
         {
@@ -139,6 +157,8 @@ public class ControladorRonda : MonoBehaviour
 
             comensalesUI[i].Configurar(i + 1, plato);
         }
+
+        
 
         textoEstado.text = "Estado: pendiente";
     }
@@ -198,12 +218,4 @@ public class ControladorRonda : MonoBehaviour
             Debug.Log("Se han terminado todas las rondas.");
     }
 
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

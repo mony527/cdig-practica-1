@@ -22,7 +22,6 @@ public class ControladorPedidos : MonoBehaviour
     public TextMeshProUGUI textoPaso;
     public TextMeshProUGUI tituloPantalla;
     public TextMeshProUGUI textoComensal;
-    public TextMeshProUGUI textoAviso;
     public GameObject panelElegirPlatoComensal;
     public GameObject panelResumenPedido;
     public GameObject prefabItemMenu;
@@ -37,6 +36,7 @@ public class ControladorPedidos : MonoBehaviour
             return; // Salimos para que no se ejecute nada más en este objeto "duplicado"
         }
         instancia = this;
+        //Reiniciar();
         pedidos = new Dictionary<int, List<Plato>>();
         for (int i = 0; i < NUMERO_TOTAL_PLATOS; i++) pedidos[i] = new List<Plato>();
     }
@@ -45,7 +45,6 @@ public class ControladorPedidos : MonoBehaviour
     void Start()
     {
         panelElegirPlatoComensal.SetActive(false);
-        textoAviso.enabled = false;
     }
 
     public void GuardarComensales(int comensales)
@@ -92,7 +91,7 @@ public class ControladorPedidos : MonoBehaviour
             panelElegirPlatoComensal.SetActive(false);
             panelResumenPedido.SetActive(true);
             ControladorResumen.instancia.CargarResumenPedido(pedidos);
-            ControladorRonda.instancia.IniciarRondas(pedidos);
+            //ControladorRonda.instancia.IniciarRondas(pedidos);
         }
     }
 
@@ -106,24 +105,11 @@ public class ControladorPedidos : MonoBehaviour
 
             botonsiguiente.interactable = haySeleccionado;
 
-            /*do
-            {
-                botonsiguiente.interactable = false;
-                toggleActivo = contenedorGrupo.GetFirstActiveToggle();
-            }
-            while (toggleActivo == null);
-
-            botonsiguiente.interactable = true;*/
-
         }
     }
 
     public void GuardarPlato()
     {
-        if (textoAviso.enabled)
-        {
-            textoAviso.enabled = false;
-        }
 
         ToggleGroup contenedorGrupo = contenedor.GetComponent<ToggleGroup>();
         Toggle toggleActivo = contenedorGrupo.GetFirstActiveToggle();
@@ -146,12 +132,7 @@ public class ControladorPedidos : MonoBehaviour
         }
         else
         {
-            if (numeroPlato < 3)
-            {
-                textoAviso.enabled = true;
-                Debug.Log("No se ha seleccionado plato numPlato:" + numeroPlato + "numeroComensal:" + numeroComensal);
-            }
-            else
+            if (numeroPlato > 2)
             {
                 pedidos[numeroPlato].Add(null);
                 numeroPlato++;
@@ -162,8 +143,15 @@ public class ControladorPedidos : MonoBehaviour
             numeroPlato = 0;
             numeroComensal++;
             Debug.Log("Reinicio pedido numPlato:" + numeroPlato + "numeroComensal:" + numeroComensal);
-            textoAviso.enabled = false;
         }
+    }
+
+    public void Reiniciar()
+    {
+        pedidos = new Dictionary<int, List<Plato>>();
+        for (int i = 0; i < NUMERO_TOTAL_PLATOS; i++) pedidos[i] = new List<Plato>();
+        numeroComensal = 0;
+        numeroPlato = 0;
     }
 }
 

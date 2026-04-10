@@ -52,7 +52,7 @@ public class ControladorMenu : MonoBehaviour
     {
         string categoriaString = opcionFiltro.options[opcionFiltro.value].text;
 
-        if (categoriaString.Equals("Seleccione un filtro de platos"))
+        if (categoriaString.Equals("Todos los platos"))
         {
             CargarMenu(todosLosPlatos);
         }
