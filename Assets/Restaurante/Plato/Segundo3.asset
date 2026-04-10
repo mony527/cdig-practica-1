@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f14a9e5f3f8c834f9072c65767099ba, type: 3}
+  m_Name: Segundo3
+  m_EditorClassIdentifier: 
+  nombre: Cachopo de ternera
+  tipo: 1
+  ingredientes: "\u2022 Filetes de ternera\r\n\u2022 Jam\xF3n serrano\r\n\u2022 Queso\r\n\u2022
+    Harina\r\n\u2022 Huevo\r\n\u2022 Pan rallado\r\n\u2022 Patatas (guarnici\xF3n)"
+  precio: 20
+  imagenPlato: {fileID: 21300000, guid: b2625e208298d114a9eda1c260c72a25, type: 3}
