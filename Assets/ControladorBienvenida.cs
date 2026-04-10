@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using static ControladorPedidos;
 
-public class PanelBienvenidaScript : MonoBehaviour
+public class ControladorBienvenida : MonoBehaviour
 {
     public GameObject panelBienvenida;
     public GameObject panelMenu;
@@ -13,7 +13,7 @@ public class PanelBienvenidaScript : MonoBehaviour
     private int numComensales;
     public Slider sliderComensales;
 
-    public static PanelBienvenidaScript instancia { get; private set; }
+    public static ControladorBienvenida instancia { get; private set; }
 
     private void Awake()
     {
@@ -44,6 +44,11 @@ public class PanelBienvenidaScript : MonoBehaviour
     {
         numComensales = (int)sliderComensales.value;
         textNumComensales.text = "" + numComensales;
+    }
+
+    public void Reiniciar(){
+        numComensales = 1;
+        sliderComensales.value = 1;
     }
 
 }

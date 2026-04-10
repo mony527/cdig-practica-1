@@ -144,6 +144,7 @@ public class ControladorCuentaUI : MonoBehaviour
                 botonEfectivo.interactable = true;
                 botonTarjeta.interactable = true;
                 ControladorPedidos.instancia.Reiniciar();
+                ControladorBienvenida.instancia.Reiniciar();
             }
         }
     }

@@ -14,6 +14,7 @@ public class ControladorRonda : MonoBehaviour
     public TextMeshProUGUI textoTituloRonda;
     public TextMeshProUGUI textoEstado;
     public Button botonTerminarRonda;
+    public Sprite imagenXSinPlato;
 
     private bool rondaListaParaTerminar = false;
     private Dictionary<int, List<Plato>> pedidos;
@@ -24,7 +25,6 @@ public class ControladorRonda : MonoBehaviour
         "PRIMEROS",
         "SEGUNDOS",
         "POSTRES",
-        /*"BEBIDAS",*/
         "CAFÉ"
     };
 
@@ -48,9 +48,8 @@ public class ControladorRonda : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panelRonda.SetActive(false);
         Debug.Log("ControladorRonda arrancando");
-
-
     }
 
     public void IniciarRondas(Dictionary<int, List<Plato>> pedidosRecibidos) //cambiar el nombre de pedidosRecibidos
@@ -155,7 +154,7 @@ public class ControladorRonda : MonoBehaviour
                 plato = platosRonda[i];
             }
 
-            comensalesUI[i].Configurar(i + 1, plato);
+            comensalesUI[i].Configurar(i + 1, plato, imagenXSinPlato);
         }
 
         

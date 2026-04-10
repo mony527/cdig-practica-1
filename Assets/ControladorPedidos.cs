@@ -26,7 +26,8 @@ public class ControladorPedidos : MonoBehaviour
     public GameObject panelResumenPedido;
     public GameObject prefabItemMenu;
     public Transform contenedor;
-    public Button botonsiguiente;
+    public Button botonSiguiente;
+    public Button botonAtras;
 
     private void Awake()
     {
@@ -68,6 +69,23 @@ public class ControladorPedidos : MonoBehaviour
     }
     public void ElegirPlato()
     {
+        if(numeroPlato == 0)
+        {
+            botonAtras.gameObject.SetActive(false);
+        }
+        else
+        {
+            botonAtras.gameObject.SetActive(true);
+        }
+
+        if(numeroPlato == 4)
+        {
+            botonSiguiente.GetComponentInChildren<TMP_Text>().text = "Listo";
+        }
+        else
+        {
+            botonSiguiente.GetComponentInChildren<TMP_Text>().text = "Siguiente";
+        }
 
         if (numeroComensal <= numeroTotalComensales)
         {
@@ -81,12 +99,13 @@ public class ControladorPedidos : MonoBehaviour
                 Debug.Log("Antes de guardar numPlato:" + numeroPlato + "numeroComensal:" + numeroComensal);
                 if (numeroPlato >= 0 && numeroPlato < 3)
                 {
-                    botonsiguiente.interactable = false;
+                    botonSiguiente.interactable = false;
 
                 }
             }
 
-        } else
+        }
+        else
         {
             panelElegirPlatoComensal.SetActive(false);
             panelResumenPedido.SetActive(true);
@@ -103,7 +122,7 @@ public class ControladorPedidos : MonoBehaviour
             ToggleGroup contenedorGrupo = contenedor.GetComponent<ToggleGroup>();
             bool haySeleccionado = contenedorGrupo.AnyTogglesOn();
 
-            botonsiguiente.interactable = haySeleccionado;
+            botonSiguiente.interactable = haySeleccionado;
 
         }
     }
@@ -143,6 +162,15 @@ public class ControladorPedidos : MonoBehaviour
             numeroPlato = 0;
             numeroComensal++;
             Debug.Log("Reinicio pedido numPlato:" + numeroPlato + "numeroComensal:" + numeroComensal);
+        }
+    }
+
+    public void IrAtras()
+    {
+        if (numeroPlato > 0 && numeroPlato < NUMERO_TOTAL_PLATOS)
+        {
+            pedidos[numeroPlato-1].RemoveAt(numeroComensal-1);
+            numeroPlato--;
         }
     }
 

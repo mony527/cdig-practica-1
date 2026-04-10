@@ -13,7 +13,7 @@ public class ControladorResumen : MonoBehaviour
     public GameObject panelResumenPedido;
     public GameObject panelRonda;
     private Dictionary<int, List<Plato>> pedidos;
-
+    public Sprite imagenXSinPlato;
 
     private void Awake()
     {
@@ -117,7 +117,8 @@ public class ControladorResumen : MonoBehaviour
             // Si es opcional y no hay plato, ocultamos el objeto de imagen
             if (opcional)
             {
-                t.gameObject.SetActive(false);
+                img.sprite = imagenXSinPlato;
+                t.gameObject.SetActive(true);
             }
         }
     }

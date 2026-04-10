@@ -9,7 +9,7 @@ public class ControladorComensalRonda : MonoBehaviour
     public TMP_Text textoComensal;
     public Image imagenPlato;
 
-    public void Configurar(int numeroComensal, Plato plato)
+    public void Configurar(int numeroComensal, Plato plato, Sprite imagenXSinPlato)
     {
         textoComensal.text = "Comensal " + numeroComensal;
 
@@ -20,18 +20,9 @@ public class ControladorComensalRonda : MonoBehaviour
         }
         else
         {
-            imagenPlato.gameObject.SetActive(false);
+            imagenPlato.sprite = imagenXSinPlato;
+            imagenPlato.gameObject.SetActive(true);
         }
     }
-    /*// Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }*/
 }
