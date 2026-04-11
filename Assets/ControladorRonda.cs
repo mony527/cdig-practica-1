@@ -49,7 +49,7 @@ public class ControladorRonda : MonoBehaviour
     void Start()
     {
         panelRonda.SetActive(false);
-        Debug.Log("ControladorRonda arrancando");
+        
     }
 
     public void IniciarRondas(Dictionary<int, List<Plato>> pedidosRecibidos) 
@@ -78,7 +78,7 @@ public class ControladorRonda : MonoBehaviour
 
         Debug.Log("Ronda: " + rondaActual);
         while (i < platosRonda.Count && todosVacios){
-            Debug.Log("hola");
+            Debug.Log("Rondas");
             if (platosRonda[i] != null)
             {
                 todosVacios = false;
@@ -93,6 +93,19 @@ public class ControladorRonda : MonoBehaviour
         }
 
         textoTituloRonda.text = nombresRonda[rondaActual];
+
+        if (botonTerminarRonda != null)
+        {
+            TextMeshProUGUI textoBoton = botonTerminarRonda.GetComponentInChildren<TextMeshProUGUI>();
+
+            if (textoBoton != null)
+            {
+                if (EsUltimaRondaVisible())
+                    textoBoton.text = "Mostrar cuenta";
+                else
+                    textoBoton.text = "Terminar ronda";
+            }
+        }
 
         CrearComensales(numeroComensales);
         CargarPlatosDeLaRonda(platosRonda);
@@ -109,6 +122,31 @@ public class ControladorRonda : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(SimularEstadoGeneral());
     }
+
+     private bool HayCafe()
+    {
+        if (!pedidos.ContainsKey(4) || pedidos[4] == null)
+            return false;
+        
+        foreach (Plato plato in pedidos[4])
+        {
+            if (plato != null)
+                return true;
+        }
+
+        return false;
+    }
+
+    private bool EsUltimaRondaVisible()
+    {
+        bool hayCafe = HayCafe();
+
+        if (hayCafe)
+            return rondaActual == 3; 
+        else
+            return rondaActual == 2; 
+    }
+
 
     private void CrearComensales(int num)
     {
