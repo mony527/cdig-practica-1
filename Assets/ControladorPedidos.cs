@@ -34,10 +34,9 @@ public class ControladorPedidos : MonoBehaviour
         if (instancia != null && instancia != this)
         {
             Destroy(this.gameObject);
-            return; // Salimos para que no se ejecute nada más en este objeto "duplicado"
+            return; 
         }
         instancia = this;
-        //Reiniciar();
         pedidos = new Dictionary<int, List<Plato>>();
         for (int i = 0; i < NUMERO_TOTAL_PLATOS; i++) pedidos[i] = new List<Plato>();
     }
@@ -110,7 +109,6 @@ public class ControladorPedidos : MonoBehaviour
             panelElegirPlatoComensal.SetActive(false);
             panelResumenPedido.SetActive(true);
             ControladorResumen.instancia.CargarResumenPedido(pedidos);
-            //ControladorRonda.instancia.IniciarRondas(pedidos);
         }
     }
 
@@ -136,7 +134,7 @@ public class ControladorPedidos : MonoBehaviour
         if (toggleActivo != null)
         {
 
-            // Si quieres el objeto "TextNombre" que está al lado del Toggle
+            
             string nombrePlato = toggleActivo.GetComponentInParent<CargarPlato>().textoNombre.text;
 
             Plato platoComensal = menu.encontrarPlato(nombrePlato);

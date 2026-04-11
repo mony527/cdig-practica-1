@@ -25,14 +25,14 @@ public class ControladorRonda : MonoBehaviour
         "PRIMEROS",
         "SEGUNDOS",
         "POSTRES",
-        "CAF…"
+        "CAF√â"
     };
 
     private readonly int[] categoriasRonda = {
         0, // PRIMEROS
         1, // SEGUNDOS
         2, // POSTRES
-        4  // CAF…
+        4  // CAF√â
     };
 
     private void Awake()
@@ -40,28 +40,23 @@ public class ControladorRonda : MonoBehaviour
         if (instancia != null && instancia != this)
         {
             Destroy(this.gameObject);
-            return; // Salimos para que no se ejecute nada m·s en este objeto "duplicado"
+            return; 
         }
         instancia = this;
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         panelRonda.SetActive(false);
         Debug.Log("ControladorRonda arrancando");
     }
 
-    public void IniciarRondas(Dictionary<int, List<Plato>> pedidosRecibidos) //cambiar el nombre de pedidosRecibidos
+    public void IniciarRondas(Dictionary<int, List<Plato>> pedidosRecibidos) 
     {
         pedidos = pedidosRecibidos;
         rondaActual = 0;
 
-        /*if (pedidos == null || !pedidos.ContainsKey(0))
-        {
-            Debug.LogWarning("No hay pedidos para iniciar las rondas.");
-            return;
-        }*/
 
         numeroComensales = pedidos[0].Count;
         MostrarRondaActual();
@@ -167,7 +162,7 @@ public class ControladorRonda : MonoBehaviour
         textoEstado.text = "Estado: pendiente";
         yield return new WaitForSeconds(1f);
 
-        textoEstado.text = "Estado: en preparaciÛn";
+        textoEstado.text = "Estado: en preparaci√≥n";
         yield return new WaitForSeconds(1f);
 
         textoEstado.text = "Estado: listo para servir";
@@ -187,7 +182,7 @@ public class ControladorRonda : MonoBehaviour
     {
         if (!rondaListaParaTerminar)
         {
-            Debug.Log("La ronda todavÌa no est· entregada.");
+            Debug.Log("La ronda todav√≠a no est√° entregada.");
             return;
         }
 

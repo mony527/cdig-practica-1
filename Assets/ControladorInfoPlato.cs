@@ -13,27 +13,27 @@ public class ControladorInfoPlato : MonoBehaviour
     public GameObject panelInfo;
     public GameObject panelMenu;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         panelInfo.SetActive(false);
     }
 
-    // Esta función es la que llama el Menú al pinchar un plato
+    
     public void MostrarInformacion(Plato plato)
     {
-        // 1. Rellenamos los datos
+        
         txtNombre.text = plato.nombre;
         txtIngredientes.text = plato.ingredientes;
-        txtPrecio.text = "<b>Precio:</b> " + plato.precio.ToString("F2") + "€";
+        txtPrecio.text = "<b>Precio:</b> " + plato.precio.ToString("F2") + "ï¿½";
         imgPlato.sprite = plato.imagenPlato;
 
-        // 2. Activamos el panel (si estaba oculto)
+        
         panelMenu.SetActive(false);
         panelInfo.SetActive(true);
     }
 
-    // Para el botón de "Volver"
+    
     public void CerrarPanel()
     {
         panelInfo.SetActive(false);

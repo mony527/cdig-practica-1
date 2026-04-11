@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq; // Para filtrar fácilmente
+using System.Linq; 
 using TMPro;
 
 
@@ -14,9 +14,9 @@ public class ControladorMenu : MonoBehaviour
 
     private ControladorInfoPlato controladorInfoPlato;
 
-    public List<Plato>todosLosPlatos; // Arrastra aquí todos tus archivos .asset
-    public GameObject prefabItemMenu; // Tu prefab 'ButtonPlano'
-    public Transform contenedor; // El objeto con el 'Grid Layout Group'
+    public List<Plato>todosLosPlatos; 
+    public GameObject prefabItemMenu; 
+    public Transform contenedor; 
 
     public TMP_Dropdown opcionFiltro;
 
@@ -27,11 +27,11 @@ public class ControladorMenu : MonoBehaviour
         if (instancia != null && instancia != this)
         {
             Destroy(this.gameObject);
-            return; // Salimos para que no se ejecute nada más en este objeto "duplicado"
+            return; 
         }
         instancia = this;
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         panelMenu.SetActive(false);
@@ -72,7 +72,7 @@ public class ControladorMenu : MonoBehaviour
         TipoPlato cat = (TipoPlato)System.Enum.Parse(typeof(TipoPlato), categoria);
         var filtrados = todosLosPlatos.Where(p => p.tipo == cat).ToList();
         bool opcional = false;
-        if(categoria == "Bebida" || categoria == "Café")
+        if(categoria == "Bebida" || categoria == "Cafï¿½")
         {
            opcional = true;
         }
@@ -133,9 +133,5 @@ public class ControladorMenu : MonoBehaviour
         controladorInfoPlato.MostrarInformacion(plato);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

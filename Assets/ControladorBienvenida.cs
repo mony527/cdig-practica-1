@@ -25,7 +25,7 @@ public class ControladorBienvenida : MonoBehaviour
         instancia = this;
     }
 
-    //public int NumComensales => numComensales; // Qué es esto??
+    
 
     void Start()
     {

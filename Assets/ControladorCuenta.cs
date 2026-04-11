@@ -38,11 +38,11 @@ public class ControladorCuentaUI : MonoBehaviour
         if (instancia != null && instancia != this)
         {
             Destroy(this.gameObject);
-            return; // Salimos para que no se ejecute nada más en este objeto "duplicado"
+            return; 
         }
         instancia = this;
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         panelCuenta.SetActive(false);
@@ -67,12 +67,12 @@ public class ControladorCuentaUI : MonoBehaviour
         {
             List<Plato> platosCategoria = platosTotales[numeroPlato];
             totalPlato = CalcularTotal(platosCategoria);
-            textTotal.text = totalPlato.ToString("F2") + "€";
+            textTotal.text = totalPlato.ToString("F2") + "â‚¬";
             total += totalPlato;
             numeroPlato++;
         }
 
-        this.textTotal.text = total.ToString("F2") + "€";
+        this.textTotal.text = total.ToString("F2") + "â‚¬";
         
 
 
@@ -107,7 +107,7 @@ public class ControladorCuentaUI : MonoBehaviour
 
         panelPagarEfectivo.SetActive(true);
 
-        totalPanelEfectivo.text = this.total.ToString("F2") + "€";
+        totalPanelEfectivo.text = this.total.ToString("F2") + "â‚¬";
 
         botonEfectivo.interactable = false;
         botonTarjeta.interactable = false;
@@ -118,14 +118,14 @@ public class ControladorCuentaUI : MonoBehaviour
         panelPagarTarjeta.GetComponentInChildren<Slider>().value = 0;
         estaCargando = true;
 
-        totalPanelTarjeta.text = this.total.ToString("F2") + "€";
+        totalPanelTarjeta.text = this.total.ToString("F2") + "â‚¬";
 
         panelPagarTarjeta.SetActive(true);
         botonEfectivo.interactable = false;
         botonTarjeta.interactable = false;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (estaCargando)

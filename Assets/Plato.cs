@@ -10,7 +10,7 @@ public enum TipoPlato
     Segundo,
     Postre,
     Bebida,
-    Café
+    CafÃ©
 }
 
 [CreateAssetMenu(fileName = "NuevoPlato", menuName = "Restaurante/Plato")]
@@ -22,17 +22,7 @@ public class Plato : ScriptableObject
     public float precio;
     public Sprite imagenPlato;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public Plato(string nombre, Sprite imagenPlato, string ingredientes, float precio, TipoPlato tipo)
     {
