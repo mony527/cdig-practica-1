@@ -101,7 +101,7 @@ public class ControladorRonda : MonoBehaviour
             if (textoBoton != null)
             {
                 if (EsUltimaRondaVisible())
-                    textoBoton.text = "Mostrar cuenta";
+                    textoBoton.text = "Pedir cuenta";
                 else
                     textoBoton.text = "Terminar ronda";
             }
